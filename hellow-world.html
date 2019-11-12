@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    
+    <title> Hello World! </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <script>
+       // Running the setup
+       mocha.setup('bdd');
+    </script>
+
+    <script>
+       // Make Chai assert global
+       let assert = chai.assert;
+    </script>
+
+  </head>
+  <body>
+  
+    <button onClick="hello()"> Click Me </button>
+    <p id="root"></p>
+
+    <!-- We use this to display test results -->
+    <div id="mocha"></div>
+    
+    <script>
+      'use strict';
+
+      function greetings(name) {
+        return `Hello World shouts from ${name}!`;
+      }
+
+      function hello() {
+         let name = prompt('What is your name?', 'George');
+         let helloMessage = greetings(name);
+         document.getElementById('root').innerHTML = helloMessage;
+      }
+      
+    </script>
+
+    <script>
+    
+      describe('Test Greetings', function() {
+
+         it('Return Hello World shouts with name in prompt', function() {
+            assert.equal( greetings('Mary'), 'Hello World shouts from Mary!' );
+         });
+
+      });
+    
+    </script>
+    
+    <script>
+       mocha.run();
+    </script>
+  
+  </body>
+</html>
