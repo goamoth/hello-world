@@ -30,9 +30,19 @@
   <body>
   
     <div class="container-fluid">
-      <button onClick="hello()" class="btn btn-primary"> Click Me </button>
-      <p id="root"></p>
-
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <button onClick="hello()" class="btn btn-primary"> Click Me </button>
+            </div>
+            <div class="col-8">
+              <p id="root"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <!-- We use this to display test results -->
       <div id="mocha"></div>
     </div>
